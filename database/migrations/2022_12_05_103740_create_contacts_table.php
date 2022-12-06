@@ -14,7 +14,16 @@ class CreateContactsTable extends Migration
     public function up()
     {
         Schema::create('contacts', function (Blueprint $table) {
-            $table->id();
+            // $table->id();
+            $table->bigInteger('id');
+            $table->string('name')->default(null);
+            $table->string('email')->default(null);
+            $table->string('mobile_number');
+            $table->string('subject');
+            $table->text('message');
+            $table->tinyInteger('seen')->default(0);
+            $table->string('feedback')->default('0');
+            $table->longText('reply');
             $table->timestamps();
         });
     }

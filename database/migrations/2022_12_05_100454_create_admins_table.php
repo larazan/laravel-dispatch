@@ -14,16 +14,17 @@ class CreateAdminsTable extends Migration
     public function up()
     {
         Schema::create('admins', function (Blueprint $table) {
-            $table->id();
-            $table->string('name');
-            $table->string('phone');
-            $table->bigInteger('admin_role_id');
-            $table->string('image');
+            // $table->id();
+            $table->bigInteger('id');
+            $table->string('name')->default(null);
+            $table->string('phone')->default(null);
+            $table->bigInteger('admin_role_id')->default(2);
+            $table->string('image')->default('def.png');
             $table->string('email');
-            $table->timestamp('email_verified_at');
+            $table->timestamp('email_verified_at')->default(null);
             $table->string('password');
-            $table->string('remember_token');
-            $table->tinyInteger('status');
+            $table->string('remember_token')->default(null);
+            $table->tinyInteger('status')->default(1);
             $table->timestamps();
         });
     }

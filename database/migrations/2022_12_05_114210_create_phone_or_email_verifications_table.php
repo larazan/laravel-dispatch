@@ -15,6 +15,8 @@ class CreatePhoneOrEmailVerificationsTable extends Migration
     {
         Schema::create('phone_or_email_verifications', function (Blueprint $table) {
             $table->id();
+            $table->string('phone_or_email')->default(null);
+            $table->string('token')->default(null);
             $table->timestamps();
         });
     }

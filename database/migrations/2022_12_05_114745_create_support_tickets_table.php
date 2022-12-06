@@ -15,6 +15,13 @@ class CreateSupportTicketsTable extends Migration
     {
         Schema::create('support_tickets', function (Blueprint $table) {
             $table->id();
+            $table->bigInteger('customer_id')->default(null);
+            $table->string('subject')->default(null);
+            $table->string('type')->default(null);
+            $table->string('priority')->default('low');
+            $table->string('description')->default(null);
+            $table->string('reply')->default(null);
+            $table->string('status')->default('open');
             $table->timestamps();
         });
     }

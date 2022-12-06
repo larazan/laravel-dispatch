@@ -15,6 +15,14 @@ class CreateChattingsTable extends Migration
     {
         Schema::create('chattings', function (Blueprint $table) {
             $table->id();
+            $table->bigInteger('user_id');
+            $table->text('message');
+            $table->tinyInteger('sent_by_user')->default(0);
+            $table->tinyInteger('sent_by_admin')->default(0);
+            $table->tinyInteger('seen_by_user')->default(1);
+            $table->tinyInteger('seen_by_admin')->default(1);
+            $table->tinyInteger('status')->default(1);
+            $table->bigInteger('shop_id')->default(null);
             $table->timestamps();
         });
     }

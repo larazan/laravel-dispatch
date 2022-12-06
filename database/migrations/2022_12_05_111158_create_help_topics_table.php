@@ -15,6 +15,10 @@ class CreateHelpTopicsTable extends Migration
     {
         Schema::create('help_topics', function (Blueprint $table) {
             $table->id();
+            $table->text('question');
+            $table->text('answer');
+            $table->integer('ranking')->default(1);
+            $table->tinyInteger('status')->default(1);
             $table->timestamps();
         });
     }

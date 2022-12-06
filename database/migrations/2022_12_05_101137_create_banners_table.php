@@ -14,13 +14,14 @@ class CreateBannersTable extends Migration
     public function up()
     {
         Schema::create('banners', function (Blueprint $table) {
-            $table->id();
-            $table->string('photo');
+            // $table->id();
+            $table->bigInteger('id');
+            $table->string('photo')->default(null);
             $table->string('banner_type');
-            $table->integer('published');
-            $table->string('url');
-            $table->string('resource_type');
-            $table->bigInteger('resource_id');
+            $table->integer('published')->default(0);
+            $table->string('url')->default(null);
+            $table->string('resource_type')->default(null);
+            $table->bigInteger('resource_id')->default(null);
             $table->timestamps();
         });
     }

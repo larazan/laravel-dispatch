@@ -14,7 +14,14 @@ class CreateOauthClientsTable extends Migration
     public function up()
     {
         Schema::create('oauth_clients', function (Blueprint $table) {
-            $table->id();
+            $table->integer('id');
+            $table->bigInteger('user_id')->default(null);
+            $table->string('name');
+            $table->string('secret');
+            $table->text('redirect');
+            $table->tinyInteger('personal_access_client');
+            $table->tinyInteger('password_client');
+            $table->tinyInteger('revoked');
             $table->timestamps();
         });
     }

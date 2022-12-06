@@ -15,6 +15,11 @@ class CreateProductStocksTable extends Migration
     {
         Schema::create('product_stocks', function (Blueprint $table) {
             $table->id();
+            $table->bigInteger('product_id')->default(null);
+            $table->string('variant')->default(null);
+            $table->string('sku')->default(null);
+            $table->decimal('price', 8, 2)->default(0.00);
+            $table->integer('qty')->default(0);
             $table->timestamps();
         });
     }

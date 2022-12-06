@@ -15,6 +15,11 @@ class CreateSupportTicketConvsTable extends Migration
     {
         Schema::create('support_ticket_convs', function (Blueprint $table) {
             $table->id();
+            $table->bigInteger('support_ticket_id')->default(null);
+            $table->bigInteger('admin_id')->default(null);
+            $table->string('customer_message')->default(null);
+            $table->string('admin_message')->default(null);
+            $table->integer('position')->default(0);
             $table->timestamps();
         });
     }

@@ -15,6 +15,9 @@ class CreateSearchFunctionsTable extends Migration
     {
         Schema::create('search_functions', function (Blueprint $table) {
             $table->id();
+            $table->string('key')->default(null);
+            $table->string('url')->default(null);
+            $table->string('visible_for')->default('admin');
             $table->timestamps();
         });
     }
