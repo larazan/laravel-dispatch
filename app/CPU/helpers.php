@@ -2,16 +2,16 @@
 
 namespace App\CPU;
 
-use App\Model\Admin;
-use App\Model\BusinessSetting;
-use App\Model\Category;
-use App\Model\Color;
-use App\Model\Coupon;
-use App\Model\Currency;
-use App\Model\Order;
-use App\Model\Review;
-use App\Model\Seller;
-use App\Model\ShippingMethod;
+use App\Models\Admin;
+use App\Models\BusinessSetting;
+use App\Models\Category;
+use App\Models\Color;
+use App\Models\Coupon;
+use App\Models\Currency;
+use App\Models\Order;
+use App\Models\Review;
+use App\Models\Seller;
+use App\Models\ShippingMethod;
 use App\User;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\App;

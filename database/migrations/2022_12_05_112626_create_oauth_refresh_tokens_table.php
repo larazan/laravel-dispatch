@@ -17,7 +17,7 @@ class CreateOauthRefreshTokensTable extends Migration
             $table->string('id');
             $table->string('access_token_id');
             $table->tinyInteger('revoked');
-            $table->dateTime('expires_at')->default(null);
+            $table->dateTime('expires_at')->nullable();
         });
     }
 

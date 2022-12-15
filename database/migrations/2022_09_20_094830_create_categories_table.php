@@ -18,6 +18,8 @@ class CreateCategoriesTable extends Migration
             $table->string('name');
             $table->string('slug');
             $table->bigInteger('parent_id');
+            $table->integer('position');
+            $table->integer('priority')->nullable();
             $table->timestamps();
         });
     }

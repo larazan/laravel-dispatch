@@ -15,18 +15,18 @@ class CreateRefundRequestsTable extends Migration
     {
         Schema::create('refund_requests', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('order_details_id');
-            $table->bigInteger('customer_id');
+            $table->unsignedBigInteger('order_details_id');
+            $table->unsignedBigInteger('customer_id');
             $table->string('status');
-            $table->double('amount', 8, 2);
-            $table->bigInteger('product_id');
-            $table->bigInteger('order_id');
+            $table->float('amount');
+            $table->unsignedBigInteger('product_id');
+            $table->unsignedBigInteger('order_id');
             $table->longText('refund_reason');
-            $table->longText('approved_note');
-            $table->longText('rejected_note');
-            $table->longText('payment_info');
-            $table->string('images')->default(null);
-            $table->string('change_by')->default(null);
+            $table->longText('approved_note')->nullable();
+            $table->longText('rejected_note')->nullable();
+            $table->longText('payment_info')->nullable();
+            $table->string('change_by')->nullable();
+            $table->string('images')->nullable();
             $table->timestamps();
         });
     }

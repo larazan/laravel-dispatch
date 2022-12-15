@@ -19,14 +19,21 @@ class CreateOrdersTable extends Migration
 				$table->string('code')->unique();
 				$table->string('status');
 				$table->datetime('order_date');
+				$table->string('order_status',50);
+            	$table->string('payment_method',100);
+            	$table->float('order_amount');
 				$table->datetime('payment_due');
 				$table->string('payment_status');
+				$table->string('coupon_code')->nullable();
+				$table->string('order_type')->default('default_type');
                 $table->string('payment_token')->nullable();
                 $table->string('payment_url')->nullable();
 				$table->decimal('base_total_price', 16, 2)->default(0);
 				$table->decimal('tax_amount', 16, 2)->default(0);
 				$table->decimal('tax_percent', 16, 2)->default(0);
 				$table->decimal('discount_amount', 16, 2)->default(0);
+				$table->float('extra_discount')->default(0);
+            	$table->string('extra_discount_type')->nullable();
 				$table->decimal('discount_percent', 16, 2)->default(0);
 				$table->decimal('shipping_cost', 16, 2)->default(0);
 				$table->decimal('grand_total', 16, 2)->default(0);
@@ -47,6 +54,7 @@ class CreateOrdersTable extends Migration
 				$table->unsignedBigInteger('cancelled_by')->nullable();
 				$table->datetime('cancelled_at')->nullable();
 				$table->text('cancellation_note')->nullable();
+				$table->boolean('checked')->default(0);
 				$table->softDeletes();
 				$table->timestamps();
 

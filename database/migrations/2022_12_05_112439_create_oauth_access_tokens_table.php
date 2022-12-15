@@ -15,12 +15,12 @@ class CreateOauthAccessTokensTable extends Migration
     {
         Schema::create('oauth_access_tokens', function (Blueprint $table) {
             $table->string('id');
-            $table->bigInteger('user_id')->default(null);
+            $table->bigInteger('user_id')->nullable();
             $table->integer('client_id');
-            $table->string('name')->default(null);
+            $table->string('name')->nullable();
             $table->text('scopes');
             $table->tinyInteger('revoked');
-            $table->dateTime('expires_at')->default(null);
+            $table->dateTime('expires_at')->nullable();
             $table->timestamps();
         });
     }

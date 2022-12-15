@@ -14,20 +14,19 @@ class CreateCartsTable extends Migration
     public function up()
     {
         Schema::create('carts', function (Blueprint $table) {
-            // $table->id();
-            $table->bigInteger('id');
-            $table->bigInteger('customer_id')->default(null);
-            $table->bigInteger('product_id')->default(null);
+            $table->id();
+            $table->bigInteger('customer_id')->nullable();
+            $table->bigInteger('product_id')->nullable();
             $table->integer('quantity')->default(1);
             $table->double('price', 8, 2)->default(1);
             $table->double('tax', 8, 2)->default(1);
             $table->double('discount', 8, 2)->default(1);
-            $table->string('slug')->default(null);
-            $table->string('name')->default(null);
-            $table->string('thumbnail')->default(null);
-            $table->string('shop_info')->default(null);
-            $table->double('shipping_cost', 8, 2)->default(null);
-            $table->string('shipping_type')->default(null);
+            $table->string('slug')->nullable();
+            $table->string('name')->nullable();
+            $table->string('thumbnail')->nullable();
+            $table->string('shop_info')->nullable();
+            $table->double('shipping_cost', 8, 2)->nullable();
+            $table->string('shipping_type')->nullable();
             $table->timestamps();
         });
     }

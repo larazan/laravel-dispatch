@@ -22,7 +22,7 @@ class CreateChattingsTable extends Migration
             $table->tinyInteger('seen_by_user')->default(1);
             $table->tinyInteger('seen_by_admin')->default(1);
             $table->tinyInteger('status')->default(1);
-            $table->bigInteger('shop_id')->default(null);
+            $table->bigInteger('shop_id')->nullable();
             $table->timestamps();
         });
     }

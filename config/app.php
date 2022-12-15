@@ -161,6 +161,8 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
+        // App\Providers\SocialLoginServiceProvider::class,
+        Madnest\Madzipper\MadzipperServiceProvider::class,
 
         /*
          * Package Service Providers...
@@ -232,7 +234,8 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         'Image' => Intervention\Image\Facades\Image::class,
-
+        'Helper' => \App\CPU\Helpers::class,
+        'Madzipper' => Madnest\Madzipper\Madzipper::class
     ],
 
 ];

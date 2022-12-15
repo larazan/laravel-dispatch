@@ -15,11 +15,11 @@ class CreateRefundStatusesTable extends Migration
     {
         Schema::create('refund_statuses', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('refund_request_id')->default(null);
-            $table->string('change_by')->default(null);
-            $table->bigInteger('change_by_id')->default(null);
-            $table->string('status')->default(null);
-            $table->longText('message');
+            $table->unsignedBigInteger('refund_request_id')->nullable();
+            $table->string('change_by')->nullable();
+            $table->unsignedBigInteger('change_by_id')->nullable();
+            $table->string('status')->nullable();
+            $table->longText('message')->nullable();
             $table->timestamps();
         });
     }

@@ -14,17 +14,16 @@ class CreateBillingAddressesTable extends Migration
     public function up()
     {
         Schema::create('billing_addresses', function (Blueprint $table) {
-            // $table->id();
-            $table->bigInteger('id');
-            $table->bigInteger('customer_id')->default(null);
-            $table->string('contact_person_name')->default(null);
-            $table->string('address_type')->default(null);
-            $table->string('address')->default(null);
-            $table->string('city')->default(null);
-            $table->integer('zip')->default(null);
-            $table->string('phone')->default(null);
-            $table->string('state')->default(null);
-            $table->string('country')->default(null);
+            $table->id();
+            $table->unsignedBigInteger('customer_id')->nullable();
+            $table->string('contact_person_name')->nullable();
+            $table->string('address_type')->nullable();
+            $table->string('address')->nullable();
+            $table->string('city')->nullable();
+            $table->integer('zip')->nullable();
+            $table->string('phone')->nullable();
+            $table->string('state')->nullable();
+            $table->string('country')->nullable();
             $table->timestamps();
         });
     }

@@ -15,10 +15,10 @@ class CreateSupportTicketConvsTable extends Migration
     {
         Schema::create('support_ticket_convs', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('support_ticket_id')->default(null);
-            $table->bigInteger('admin_id')->default(null);
-            $table->string('customer_message')->default(null);
-            $table->string('admin_message')->default(null);
+            $table->unsignedBigInteger('support_ticket_id')->nullable();
+            $table->unsignedBigInteger('admin_id')->nullable();
+            $table->string('customer_message')->nullable();
+            $table->string('admin_message')->nullable();
             $table->integer('position')->default(0);
             $table->timestamps();
         });
